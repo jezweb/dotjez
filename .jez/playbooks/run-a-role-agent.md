@@ -8,22 +8,29 @@
    - **What it does** and, just as important, **what it does NOT do**, its lane.
    - **Boundaries** — what it must never do without asking (make live changes, send email, spend money).
    - **How it works** — its standard of "done," its voice.
-3. Add a role `CLAUDE.md` only if it needs conventions beyond the workspace brief.
+3. Add a role `CLAUDE.md` only once it actually has a convention worth recording, not in anticipation of one. A file full of "to confirm" placeholders is pre-building, leave it until there's a real rule to write, and let the cascade cover the role until then.
+4. If the role works from a list of inputs (sites to check, accounts to watch, a queue), keep that list in a file in its `.jez/` that it reads each run, not baked into `about.md`. The inputs change far more often than the persona, so they want their own home, and the role should read the list, never guess it.
 
 ## Run it
 - **One bounded output per run.** Depth over breadth: one thing done properly beats five skimmed. This is the single most important habit for an agent that runs often.
 - **Journal each run** (`<role>/.jez/journal/`) so the next run picks up cleanly.
 - **Surface, don't sprawl.** A role agent stays in its lane and flags things for you rather than wandering into work that isn't its job.
+- **Decide where a flag surfaces.** The journal is its durable record, but a watcher whose alerts only sit in a journal you'd have to go open is half-useless. Settle up front: when a run turns up something that needs you, where does it go so you'll actually see it, and may it message you (and how)? Reaching anyone *outside* (clients, third parties) stays off-limits unless you've explicitly said otherwise.
 - **Know when to stop.** Define what "nothing to do this run" looks like, so a loop can idle instead of inventing work.
 
 ## Make it ongoing
-If the role should keep working without you starting each session, run it on a schedule (`/loop` or cron) that opens a session in its folder. A few hard-won rules for loops:
+If the role should keep working without you starting each session, put it on a heartbeat that opens a session in its folder. Two routes, in order:
+
+- **Start with `/loop`** — it reruns a prompt on an interval while a session is open. Begin here: it's the cheapest way to watch the first few ticks behave before you trust it.
+- **Then a real schedule** — one that fires even when you're not at the machine. *How* that works depends on the user's setup (their OS scheduler, their agent harness), so ask what they've got rather than assuming a command. A schedule that survives a closed laptop, or runs the same role across machines, is the cloud layer beyond plain dotjez.
+
+Pick a generous interval. A heartbeat is not a workload, most fires should be "nothing to do, exit," so checking every 30–60 minutes is usually plenty, not every minute. A few hard-won rules for loops:
 
 - **Most fires are no-ops.** The schedule is a heartbeat, not a workload, a tick should usually be "nothing to do, exit" or "still working, exit." Don't invent work to fill it.
 - **One bounded output per fire**, with a clear stop condition so it can idle instead of sprawling.
 - **Let it refine its own approach** (note what worked in its journal, adjust next run), but *only* its own, a loop shouldn't rewrite anything outside its job.
 - **Session-first, cloud-later.** Run it session-bound first and watch a few ticks behave before you promote it to always-on.
 
-That's the whole pattern. A role agent isn't a new kind of thing, it's the folder-with-`.jez` primitive with a persona and a cadence. The loop itself runs on plain Claude Code: `/loop` (or cron) is the heartbeat, sub-task agents do the batches. What a cloud layer adds is making those loops **persist and run across machines** (so the cron survives a sleeping laptop and the same loop runs everywhere) and coordinating many agents at once, that's the bit beyond dotjez, not the loop itself.
+That's the whole pattern. A role agent isn't a new kind of thing, it's the folder-with-`.jez` primitive with a persona and a cadence, running on plain Claude Code: the heartbeat schedules it, sub-task agents do any heavy batches. Coordinating many such agents at once is the bit beyond dotjez, not the role itself.
 
 When the work is bigger than one session can finish and the loop should *tune its own procedure* as it goes (a backlog to grind through, patterns worth capturing), that's its own playbook: see [[run-a-self-refining-loop]] for the tick shape, the files it keeps, and the handful of rules that keep a self-modifying loop safe.
