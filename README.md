@@ -77,6 +77,15 @@ cp -r dotjez/sample-project/.jez   your-workspace/a-real-project/.jez
 
 Either way: the root `CLAUDE.md` is the operator brief (it tells the agent it's the keeper of this workspace), and `.jez/CLAUDE.md` is the detail on how it's organised. Claude Code reads both automatically when you work in the folder. The example files (`acme-digital.md`, `new-client-onboarding.md`, and friends) show you the shape, so to add a real one you just copy the example. Read them, then make them yours.
 
+## For the agent
+
+If you're an AI agent pointed at this repo, here's your job.
+
+- The workspace-root `CLAUDE.md` is your operator brief; `.jez/CLAUDE.md` is the detail. Read both. (In Claude Code they load automatically once you're working in the folder.) Don't reinvent the conventions, follow what's there.
+- Start by reading `.jez/about.md` to learn who you're working for and how they like to work. If it's still placeholders, offer to fill it in with them, it's the most useful first thing you can do.
+- Then run the loop: **Ask** (check `.jez/` before researching), **Add** (write what you learn, one file per thing), **Tidy** (fix or delete what's stale, keep the briefs current).
+- Setting up a new person? Help them clone or copy this into a workspace folder, fill in `about.md` together, and use the sample files (each carries a "copy the shape" banner) as templates, copy from them, then delete the samples.
+
 ## What's in here
 
 ```
