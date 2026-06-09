@@ -52,3 +52,5 @@ These depend on access you may or may not have (a GitHub login, a mail tool, a f
 ## Then
 
 Write `about.md` (who I am / what I work on / what I'm working toward / how I like to work). If they gave a lot, split it into an `about/` folder: `voice.md` (how I write, with a couple of "I'd love this / I'd hate this" examples), `expertise.md` (when to be brief vs thorough), `business.md`, `people.md`. Start as one file; grow it only when it earns the split.
+
+Last, make the workspace theirs. If it's still the cloned starter, the git remote points at the public template, re-point `origin` to a private repo of their own, or remove the remote entirely (local-only is fine). Then make the first commit. From here on, commit when you journal at session end: this folder is becoming the durable record of their work, and it deserves version history and a backup.

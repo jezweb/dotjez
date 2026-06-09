@@ -21,7 +21,7 @@ A line or two: what the project does, who it's for, what it's built on.
 - `.jez/screenshots/` — images and recordings (gitignored)
 - `.jez/scripts/` — one-off scripts for this project
 
-These subfolders are defaults, not a fixed set. Make new ones when the project needs them: a marketing project might want `drafts/` and `assets/`; an event might want `vendors/` and a `runsheet/`. Same rule as the hub, a folder earns its place once about three files belong in it; don't pre-build empties.
+These subfolders are defaults, not a fixed set. Make new ones when the project needs them: a marketing project might want `drafts/` and `assets/`; an event might want `vendors/` and a `runsheet/`. Same rule as the hub, a folder earns its place once about three files belong in it; don't pre-build empties — this sample's `.jez/` carries only `plans/`, because that's the one its own work earned.
 
 Anything here that turns out to matter across projects should move up to your workspace `.jez/`.
 
