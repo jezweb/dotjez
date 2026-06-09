@@ -24,9 +24,10 @@ The shared, cross-project knowledge for this workspace: clients, contacts, decis
 | A repeatable task | `playbooks/` | `new-client-onboarding.md` |
 | An investigation or scan | `research/` | `competitor-pricing-scan-2026-06-09.md` |
 | An idea for later | `ideas/` | `dashboard-compare-view.md` |
+| What I did this session (running log) | `journal/` | `2026-06-09.md` |
 | Not filed yet | `inbox/` | anything |
 
-Plus `about.md` at the hub root: who you are, the business, your goals, and how you like to work. Fill it in first, it's the context the agent reads to act in your interest.
+Plus `about.md` at the hub root: who you are, the business, your goals, and how you like to work. Fill it in first (the `onboard` playbook does this), it's the context the agent reads to act in your interest. When it gets rich, it grows into an `about/` folder (`voice.md` for how you write with "I'd love / I'd hate" examples, `expertise.md` for when to be brief vs thorough, `business.md`, `people.md`), earned, not shipped empty.
 
 Notes specific to one project don't go here. They go in that project's own `.jez/` (see `sample-project/`).
 
@@ -54,6 +55,18 @@ See [[acme-digital]] for the billing quirk.
 ```
 
 The slug matches a filename, so you (or the agent) can grep or open it. For a precise pointer an agent will follow, a full path also works: `.jez/clients/acme-digital.md`.
+
+## The journal
+
+`journal/YYYY-MM-DD.md` is the agent's running log: a few lines at the end of a work session, *what I worked on / what landed / what I noticed / what's next*. It's how the next session picks up where the last one left off, files are durable, the conversation isn't.
+
+Keep three things separate, they answer different questions:
+
+- **`journal/`** — what *happened* (narrative, dated, append-only).
+- **`SESSION.md`** (in a project) — where that project *stands right now* (a short breadcrumb, kept current).
+- **`about.md`** — who you *are* (changes rarely).
+
+You don't need agent folders for this. There's one agent; its log is just a dated collection in the wiki, like `research/`.
 
 ## Playbooks are your skills
 
