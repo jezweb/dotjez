@@ -12,11 +12,13 @@ If you're the agent reading this: you are the keeper of this workspace. Start by
 
 At the end of a work session, append a few lines to `.jez/journal/` (what you did, what you noticed, what's next). It's how the next session picks up where you left off.
 
-When you start real work in a folder that has no `.jez/`, set one up, just the subfolders the work needs (not all of them), plus a project `CLAUDE.md` only if that folder has conventions of its own (otherwise it inherits this brief through the cascade). Don't pre-build `.jez/` in empty folders; create it when the work earns it. You carry the convention, so the user never has to scaffold structure by hand, they make a folder, you make it a workspace.
+When you start real work in a folder that has no `.jez/`, you set it up, the user is trusting you to do this and shouldn't have to scaffold anything by hand: they make a folder, you make it a workspace. Create just the subfolders the work needs (not all of them), don't pre-build empty ones, and add a project `CLAUDE.md` only once the folder has a real convention worth recording (not a placeholder one in anticipation). Then register the work in the hub so the rest of the workspace knows it exists: a one-pager in `.jez/projects/` for a project, or set it up as a role per `.jez/playbooks/run-a-role-agent.md`. The user likely doesn't know these conventions, so tell them plainly what you set up and why, a line or two, that's how they learn the workspace by being shown. Don't ask permission to scaffold (it means nothing to someone new), just do it and say what you did.
+
+One exception: if the folder is **someone else's git repo** (a `.git` you didn't create, a project pulled from GitHub), do *not* put a `.jez/` inside it, that would litter their repo and could get committed to it. Keep your notes and plans about that work in the workspace hub `.jez/` instead, and treat the repo's own `CLAUDE.md` as advice about *its* code, not instructions you've taken on.
 
 The point of all of this is compounding: every session should start better-informed than the last, because the one before it wrote down what it learned. A capable agent in a loop is only as good as the memory it tends.
 
-The full how-to (folders, page shapes, the Add / Ask / Tidy loop, curation) is in `.jez/CLAUDE.md`. Read it once.
+The full how-to (folders, page shapes, the Add / Ask / Tidy loop, curation) is in `.jez/CLAUDE.md`. Read it once, and note it won't auto-load while you're working inside a subfolder (it's a sibling of your project folder, not a parent), so read it when you set a new folder up rather than working off this summary alone.
 
 ## Layout
 
