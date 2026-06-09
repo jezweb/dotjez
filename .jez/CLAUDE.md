@@ -68,13 +68,11 @@ Keep three things separate, they answer different questions:
 
 You don't need agent folders for this. There's one agent; its log is just a dated collection in the wiki, like `research/`.
 
-## Playbooks are your skills
+## Playbooks: how we work
 
-A playbook in `playbooks/` is a procedure the agent reads when the task comes up again, the lean version of a skill. Write one the moment a task recurs, or when something went wrong and you worked out the right way. Capturing it is what stops the same mistake twice and makes the next run faster. A realignment or a near-miss is a playbook waiting to be written.
+A playbook in `playbooks/` is a **documented way of working**, "how we onboard a client", "how we run a role agent", that the agent reads when the situation comes up. It's the unit that lets a team ship its working practices into a workspace: portable, editable markdown, not code, not config. Write one the moment a task recurs, or when something went wrong and you worked out the right way, a near-miss is a playbook waiting to be written. Capturing it stops the same mistake twice and makes the next run faster.
 
-You don't need machinery to make this "automatic": it's a habit the agent runs at the end of work ("did anything recur or go wrong? capture it"), and you can make it periodic with a scheduled pass (`/loop`, cron, or a `reflect`-style routine) if you want.
-
-When a playbook gets used often enough that you want it to load itself, graduate it to a real Claude Code skill (a `SKILL.md` the harness surfaces automatically). Until it earns that, a markdown playbook the agent reads is enough.
+**A playbook is not a skill.** A skill (a Claude Code `SKILL.md`) is a *capability* the harness loads and can invoke; a playbook is *process knowledge* that lives in your workspace as content. Different shape, different home, different purpose. Most ways of working are happier as playbooks, a human can read and edit them and they travel with the workspace. If you genuinely want a procedure to load itself automatically, that's a skill, a separate harness artifact, not a playbook with extra steps.
 
 ## One file, or a folder?
 
