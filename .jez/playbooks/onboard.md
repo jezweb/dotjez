@@ -1,8 +1,10 @@
 # Onboard me (set up about.md)
 
-> The agent runs this on first use, or whenever `about.md` is still placeholders, to learn who it's working for. Offer the user a choice of two paths, then write the result into `about.md`.
+> The agent runs this on first use, or whenever `about.md` is still placeholders, to learn who it's working for. Offer a choice of paths, then write the result into `about.md`.
 
-Tell the user there are two ways to do this, their pick.
+Usually you're profiling the **human** who owns the workspace. But if this folder is an **agent's** own working context, run the same paths to *define the agent* instead, its role, voice, what it's expert in, and its mandate. Same questions; you're prescribing a persona rather than describing a person.
+
+Tell the user there are a few ways to do this, their pick.
 
 ## Path A — borrow from an AI that already knows you (fastest)
 

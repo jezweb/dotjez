@@ -43,6 +43,8 @@ The repo is called `dotjez` on GitHub, but on your machine it's just your worksp
 
 A `.jez` works at any level, and "project" is just shorthand. **A folder with a `.jez` in it is a self-contained working context**, it can be a project, a task, a client, or an idea you're actively chewing on. Nest them as deep as makes sense; a small idea is a file in `ideas/`, and it grows into its own folder-with-`.jez` once it becomes real work. That's also why there's no special "agents" folder: an agent's context is simply the folder it's standing in, plus the `.jez` it reads and writes. Open your agent wherever the work is.
 
+And the identity in `about.md` doesn't have to be *you*. A folder-with-`.jez` can be an **agent's** own context, in which case `about.md` defines that agent (its role, voice, what it's expert in, its mandate), same file, you're just prescribing a persona instead of describing yourself. Set up a few of those on a machine and you have a small team of agent-personas you drive by hand. When they need to run themselves, sync across machines, or coordinate as a fleet, that's a job for a heavier autonomous runtime layered on this same substrate, its own thing, beyond what dotjez sets out to be.
+
 So there are two scopes, and you want both:
 
 | Scope | Lives at | Holds |
