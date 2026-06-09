@@ -6,11 +6,11 @@ The shared, cross-project knowledge for this workspace: clients, contacts, decis
 
 ## The loop
 
-**Add** — learned something reusable? Write it as one file in the folder that fits. Name it after the thing it's about (`acme-digital.md`, `meeting-recordings-auto-delete.md`), not the date. If a page already covers the topic, update that page rather than making a near-duplicate. Don't invent: if you're unsure of a fact, write what you know and flag the gap (`status: needs-review`), never a guess dressed as truth, a confident wrong note is worse than a gap.
+**Add** — learned something reusable? Write it as one file in the folder that fits. Name it after the thing it's about (`acme-digital.md`, `meeting-recordings-auto-delete.md`), not the date. If a page already covers the topic, update that page rather than making a near-duplicate. Don't invent: if you're unsure of a fact, write what you know and flag the gap (`status: needs-review`), never a guess dressed as truth, a confident wrong note is worse than a gap. Two traps that don't *feel* like unsureness: your built-in knowledge has a date, so check a live source before filing anything that changes over time (prices, rates, rules), stale recall feels exactly like knowing; and a question you can't answer yet is worth two lines on the relevant page (what's unknown, why it matters) rather than letting it evaporate with the conversation.
 
 **Ask** — before starting, look here first: `ls` the folder, grep for a keyword, follow the `[[links]]`.
 
-**Tidy** — when you spot something stale or wrong, fix it or delete it. Wrong knowledge is worse than none.
+**Tidy** — when you spot something stale or wrong, fix it or delete it. Wrong knowledge is worse than none. And when a note disagrees with what you observe live, the observation wins: update the note, never work around fresh evidence to honour a stale file.
 
 ## Where things go
 
@@ -18,7 +18,7 @@ The shared, cross-project knowledge for this workspace: clients, contacts, decis
 |---|---|---|
 | A client or organisation | `clients/` | `acme-digital.md` |
 | A person or relationship that spans clients | `contacts/` | `key-relationships.md` |
-| A choice you made, and why | `decisions/` | `2026-06-09-use-xero-for-invoicing.md` |
+| A choice you made, and why — including choices to *stop* using something | `decisions/` | `2026-06-09-use-xero-for-invoicing.md` |
 | A project (a one-pager; the work itself lives in its own folder) | `projects/` | `acme-brand-refresh.md` |
 | A pattern or gotcha across projects | `knowledge/` | `meeting-recordings-auto-delete.md` |
 | A repeatable task | `playbooks/` | `new-client-onboarding.md` |
