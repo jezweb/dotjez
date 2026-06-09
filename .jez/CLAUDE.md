@@ -6,7 +6,7 @@ The shared, cross-project knowledge for this workspace: clients, contacts, decis
 
 ## The loop
 
-**Add** — learned something reusable? Write it as one file in the folder that fits. Name it after the thing it's about (`acme-digital.md`, `meeting-recordings-auto-delete.md`), not the date. If a page already covers the topic, update that page rather than making a near-duplicate.
+**Add** — learned something reusable? Write it as one file in the folder that fits. Name it after the thing it's about (`acme-digital.md`, `meeting-recordings-auto-delete.md`), not the date. If a page already covers the topic, update that page rather than making a near-duplicate. Don't invent: if you're unsure of a fact, write what you know and flag the gap (`status: needs-review`), never a guess dressed as truth, a confident wrong note is worse than a gap.
 
 **Ask** — before starting, look here first: `ls` the folder, grep for a keyword, follow the `[[links]]`.
 
@@ -70,7 +70,7 @@ You don't need agent folders for this. There's one agent; its log is just a date
 
 ## Playbooks: how we work
 
-A playbook in `playbooks/` is a **documented way of working**, "how we onboard a client", "how we run a role agent", that the agent reads when the situation comes up. It's the unit that lets a team ship its working practices into a workspace: portable, editable markdown, not code, not config. Write one the moment a task recurs, or when something went wrong and you worked out the right way, a near-miss is a playbook waiting to be written. Capturing it stops the same mistake twice and makes the next run faster.
+A playbook in `playbooks/` is a **documented way of working**, "how we onboard a client", "how we run a role agent", that the agent reads when the situation comes up. It's the unit that lets a team ship its working practices into a workspace: portable, editable markdown, not code, not config. Write one the moment a task recurs, or when something went wrong and you worked out the right way, a near-miss is a playbook waiting to be written. Capturing it stops the same mistake twice and makes the next run faster. Write it as the goal and what to watch for, not a rigid step-by-step script, a capable agent follows intent better than instructions, and an over-specified playbook ages into a brittle recipe.
 
 **A playbook is not a skill.** A skill (a Claude Code `SKILL.md`) is a *capability* the harness loads and can invoke; a playbook is *process knowledge* that lives in your workspace as content. Different shape, different home, different purpose. Most ways of working are happier as playbooks, a human can read and edit them and they travel with the workspace. If you genuinely want a procedure to load itself automatically, that's a skill, a separate harness artifact, not a playbook with extra steps.
 
