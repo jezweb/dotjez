@@ -83,6 +83,24 @@ Either way: the root `CLAUDE.md` is the operator brief (it tells the agent it's 
 
 **New to working with an AI agent?** Just say *"help me set up this workspace."* The agent runs `.jez/playbooks/onboard.md`, which either asks you a few questions or hands you a prompt to paste into an AI you already use (ChatGPT, Claude, Gemini), and writes your `about.md` from the answers. That's the whole setup, and it's the fastest way to go from "new to this" to an agent that actually knows you.
 
+## What the first session looks like
+
+```
+You    →  "help me set up this workspace"
+Agent  →  runs onboard: interviews you, or takes a paste from an AI you already
+          use, or (with your ok) reads your GitHub / sent email to learn your
+          voice. Writes about.md.
+
+You    →  "new client just signed — Acme Digital, web + email, contact Jane"
+Agent  →  copies the clients/ example to clients/acme-digital.md and fills it in.
+
+   ...you work...
+
+Agent  →  at the end, appends a line to journal/: what you did, what's next.
+```
+
+Next time you open it, the agent reads `about.md` and the last journal entry first, so it already knows who you are and where you left off. That's the compounding: every session starts ahead of the last.
+
 ## Keep it private
 
 ⚠️ **Your filled-in `.jez/` will hold real people and client data**, in a folder it's tempting to `git push`. Don't push it to a public remote. Keep your workspace in a **private** repo, or add `.jez/` to your `.gitignore` if you only want it local. (This template repo is public only because its examples are made up. Yours won't be.)
