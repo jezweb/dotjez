@@ -1,0 +1,16 @@
+.DS_Store
+
+# never commit real credentials
+**/.jez/secrets/*
+!**/.jez/secrets/README.md
+
+# binaries don't belong in git; keep them in .jez/screenshots for easy access
+**/.jez/screenshots/*
+!**/.jez/screenshots/README.md
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mov
+*.mp4
+*.webm
