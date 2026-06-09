@@ -36,6 +36,17 @@ If they'd rather just talk, ask these one at a time, acknowledging each answer b
 4. Who are the key people, clients, or projects I should know about?
 5. What are you trying to get done over the next while?
 
+## Path C — let me go and learn (with your permission)
+
+If they'd rather you find out for yourself, and they're comfortable with it, offer to learn from their own work. Ask first, use what you have access to, and distil what you learn into `about.md` / `about/voice.md`, don't copy private content around.
+
+- **Their GitHub** — what they build and their stack (`gh repo list`, skim a few READMEs).
+- **Their work folders** — skim the docs or code they point you at, to see what they actually do.
+- **Their sent email** — the richest source for *how they write*. A handful of real sent messages teaches their voice better than any description. Lands in `about/voice.md`.
+- **Their chat history** — if they already chat with an AI, the paste in Path A is the easy version of this.
+
+These depend on access you may or may not have (a GitHub login, a mail tool, a folder path). Offer them, use what's available, skip what isn't. Sent-email and chat are sensitive, only with a clear yes.
+
 ## Then
 
 Write `about.md` (who I am / what I work on / what I'm working toward / how I like to work). If they gave a lot, split it into an `about/` folder: `voice.md` (how I write, with a couple of "I'd love this / I'd hate this" examples), `expertise.md` (when to be brief vs thorough), `business.md`, `people.md`. Start as one file; grow it only when it earns the split.

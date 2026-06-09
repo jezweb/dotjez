@@ -41,6 +41,8 @@ The repo is called `dotjez` on GitHub, but on your machine it's just your worksp
     └── .jez/
 ```
 
+A `.jez` works at any level, and "project" is just shorthand. **A folder with a `.jez` in it is a self-contained working context**, it can be a project, a task, a client, or an idea you're actively chewing on. Nest them as deep as makes sense; a small idea is a file in `ideas/`, and it grows into its own folder-with-`.jez` once it becomes real work. That's also why there's no special "agents" folder: an agent's context is simply the folder it's standing in, plus the `.jez` it reads and writes. Open your agent wherever the work is.
+
 So there are two scopes, and you want both:
 
 | Scope | Lives at | Holds |
