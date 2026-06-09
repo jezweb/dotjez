@@ -17,6 +17,11 @@
 - **Know when to stop.** Define what "nothing to do this run" looks like, so a loop can idle instead of inventing work.
 
 ## Make it ongoing
-If the role should keep working without you starting each session, run it on a schedule, `/loop`, or cron, that opens a session in its folder. Keep each tick to one bounded output, and let it refine its own approach over time (note what worked in its journal, adjust next run).
+If the role should keep working without you starting each session, run it on a schedule (`/loop` or cron) that opens a session in its folder. A few hard-won rules for loops:
 
-That's the whole pattern. A role agent isn't a new kind of thing, it's the folder-with-`.jez` primitive with a persona and a cadence. (When several role agents need to coordinate or run across machines, that's the cloud layer's job, beyond dotjez.)
+- **Most fires are no-ops.** The schedule is a heartbeat, not a workload, a tick should usually be "nothing to do, exit" or "still working, exit." Don't invent work to fill it.
+- **One bounded output per fire**, with a clear stop condition so it can idle instead of sprawling.
+- **Let it refine its own approach** (note what worked in its journal, adjust next run), but *only* its own, a loop shouldn't rewrite anything outside its job.
+- **Session-first, cloud-later.** Run it session-bound first and watch a few ticks behave before you promote it to always-on.
+
+That's the whole pattern. A role agent isn't a new kind of thing, it's the folder-with-`.jez` primitive with a persona and a cadence. When several role agents need to coordinate, run across machines, or drive a serious self-refining loop (sub-agent batches, daily caps, auto-pause), that's the cloud layer's job, beyond dotjez.
