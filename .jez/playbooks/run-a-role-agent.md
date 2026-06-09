@@ -11,6 +11,15 @@
 3. Add a role `CLAUDE.md` only once it actually has a convention worth recording, not in anticipation of one. A file full of "to confirm" placeholders is pre-building, leave it until there's a real rule to write, and let the cascade cover the role until then.
 4. If the role works from a list of inputs (sites to check, accounts to watch, a queue), keep that list in a file in its `.jez/` that it reads each run, not baked into `about.md`. The inputs change far more often than the persona, so they want their own home, and the role should read the list, never guess it.
 
+## If it's a specialist, populate it, don't just shape it
+A designer, writer, quoter, bookkeeper, or developer agent is only as good as the knowledge behind it. The persona is the shell; what makes it actually *good* is the reference it works from, and you usually can't write that from nothing. The failure to avoid: a tidy `about.md`, an empty folder, "set up", a specialist that demos well and fails the first real job, which is worse than none because it looks trustworthy.
+
+- **Ask before you write.** If the job needs things only the user knows (their rates, their house style, their stack, who signs off), ask a few pointed questions first. Don't write a generic persona and call it done, a quoter without the real rate card drafts confident, wrongly-priced quotes.
+- **Research, don't invent.** Read the user's own materials as the primary source (past quotes, brand files, the codebase), and verify any domain fact you're unsure of against an authoritative source. A guessed fact baked into a specialist's reference gets repeated to every client, invisibly.
+- **Give it reference files, and at least one worked example.** Put the substance in its `.jez/` as files it reads each run: the rate card, the style guide, the stack conventions, whatever the work runs on. And for anything where quality is about voice, format, or taste (a writer, a quoter, a designer), one real piece of the user's own good work teaches it far more than any description you'd write, ask for a job they're happy with and make it the quality bar.
+
+The test of a specialist: *could it do one real job well today?* If there's a persona but no rates, no example, no house style, the answer is no, it only looks set up.
+
 ## Run it
 - **One bounded output per run.** Depth over breadth: one thing done properly beats five skimmed. This is the single most important habit for an agent that runs often.
 - **Journal each run** (`<role>/.jez/journal/`) so the next run picks up cleanly.
