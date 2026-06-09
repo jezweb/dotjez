@@ -16,7 +16,7 @@ A one-pager that lives in the hub. The actual work (briefs, drafts, assets) live
 Refresh Acme's logo, colours, and key templates.
 
 ## Where the work lives
-- Folder: `~/workspace/acme-brand-refresh/` (briefs, drafts, final assets)
+- Folder: its own `acme-brand-refresh/` folder in the workspace (briefs, drafts, final assets)
 - Plans and notes: `acme-brand-refresh/.jez/`
 
 ## Current state

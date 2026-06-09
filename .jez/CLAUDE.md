@@ -29,7 +29,7 @@ The shared, cross-project knowledge for this workspace: clients, contacts, decis
 
 Plus `about.md` at the hub root: who you are, the business, your goals, and how you like to work. Fill it in first (the `onboard` playbook does this), it's the context the agent reads to act in your interest. When it gets rich, it grows into an `about/` folder (`voice.md` for how you write with "I'd love / I'd hate" examples, `expertise.md` for when to be brief vs thorough, `business.md`, `people.md`), earned, not shipped empty.
 
-Notes specific to one project don't go here. They go in that project's own `.jez/` (see `sample-project/`).
+One question decides hub vs project: *will another project ever care about this?* Yes goes here in the hub; no goes in that project's own `.jez/` (see `sample-project/`).
 
 ## How a page looks
 

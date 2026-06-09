@@ -1,163 +1,68 @@
 # dotjez
 
-A copy-and-go workspace for working alongside an AI agent. A small set of folder primitives for a computer that's organised to run agents as companion workers, whatever your job is.
+A copy-and-go workspace for working alongside an AI agent. Your knowledge lives as plain markdown the agent reads and keeps up to date, so you never solve the same thing twice. **You don't need to be a developer**, and it works for any job, not just code.
 
-It's just markdown in folders. No app, no database, no cloud. Clone it, come into the folder, open Claude (or whatever agent you use), and go to work. The agent reads your knowledge, helps you, and writes back what it learns.
+No app, no database, no cloud. It's just folders. Clone it, open your agent in the folder, and go.
 
 ## The idea
 
-Keep what you learn as markdown files an AI can read and keep up to date. One file per thing: a client, a decision, a project, a gotcha, an idea. Over time the folder *compounds*. Instead of re-researching, you and the agent read what's already written and add to it. It works the same whether your work is accounts, sales, support, product, ops, or code.
+Keep what you learn as one file per thing: a client, a decision, a project, a gotcha, an idea. Over time it *compounds*, instead of re-researching, you and the agent read what's already there and add to it. Three moves, the whole loop:
 
-**You don't need to be a developer.** If you can copy a folder and chat with an AI agent, this is for you. Not comfortable in a terminal? Point your agent at this repo and ask it to set you up.
+- **Add** — learned something reusable? Write it down, or update the file that's already there.
+- **Ask** — starting something? Check what's already here first.
+- **Tidy** — now and then, fix what's stale and bin what's dead. Wrong notes are worse than none.
 
-Three moves, that's the whole loop:
+## Start
 
-| Move | What it means |
-|---|---|
-| **Add** | Learned something reusable? Write it as a new file, or update the one that's already there. |
-| **Ask** | Starting something? Read what's already here first: `ls`, grep, follow the `[[links]]`. |
-| **Tidy** | Now and then, fix what's stale and delete what's dead. Wrong notes are worse than none. |
+The easy way: open your agent in the folder and say **"help me set up this workspace."** It interviews you, or borrows a profile from an AI you already use (ChatGPT, Claude, Gemini), and writes your `about.md`. That's the whole setup.
 
-If you've seen Andrej Karpathy's "LLM wiki" or the DOX pattern, this is the same idea kept small (links at the bottom).
-
-## What's a workspace?
-
-Just the folder where you keep your projects. Put it wherever suits you, and name it whatever you like. Some clean choices:
+To get the folder:
 
 ```
-~/workspace            simple, home-level
-~/Documents/workspace  if you'd rather keep it under Documents
-~/code/workspace       wherever your projects already live
+git clone https://github.com/jezweb/dotjez ~/workspace && cd ~/workspace
 ```
 
-The repo is called `dotjez` on GitHub, but on your machine it's just your workspace folder. Nothing inside cares what you name it. Inside, you end up with:
-
-```
-~/workspace/                  your workspace (this repo, cloned)
-├── .jez/                     cross-project knowledge hub  (shared by everything below)
-├── some-client-site/         a project
-│   └── .jez/                 scratch just for this project
-└── another-project/
-    └── .jez/
-```
-
-A `.jez` works at any level, and "project" is just shorthand. **A folder with a `.jez` in it is a self-contained working context**, it can be a project, a task, a client, or an idea you're actively chewing on. Nest them as deep as makes sense; a small idea is a file in `ideas/`, and it grows into its own folder-with-`.jez` once it becomes real work. That's also why there's no special "agents" folder: an agent's context is simply the folder it's standing in, plus the `.jez` it reads and writes. Open your agent wherever the work is.
-
-And the identity in `about.md` doesn't have to be *you*. A folder-with-`.jez` can be an **agent's** own context, in which case `about.md` defines that agent (its role, voice, what it's expert in, its mandate), same file, you're just prescribing a persona instead of describing yourself. Set up a few of those on a machine and you have a small team of agent-personas you drive by hand. When they need to run themselves, sync across machines, or coordinate as a fleet, that's a job for a heavier autonomous runtime layered on this same substrate, its own thing, beyond what dotjez sets out to be.
-
-So there are two scopes, and you want both:
-
-| Scope | Lives at | Holds |
-|---|---|---|
-| **Workspace hub** | `<workspace>/.jez/` | Knowledge across all your work: clients, patterns, playbooks, research, ideas |
-| **Project** | `<workspace>/<project>/.jez/` | Scratch for one project: plans, audit notes, screenshots, throwaway scripts |
-
-One question decides which: *will another project ever care about this?* Yes goes in the hub. No goes in the project.
-
-## Get started
-
-**Option A: clone it as a fresh workspace**
-
-Clone it to whatever folder you want to be your workspace (the name is yours to pick):
-
-```
-git clone <this-repo-url> ~/workspace          # or ~/Documents/workspace, ~/code/workspace, ...
-cd ~/workspace
-```
-
-Then make it yours: re-point git at your own private repo (so your real client knowledge never pushes back to the shared template), and delete `sample-project/` once you've seen the pattern.
-
-```
-git remote remove origin
-# optional: git remote add origin <your-own-private-repo>
-```
-
-**Option B: copy the bits into a workspace you already have**
-
-```
-cp -r dotjez/.jez            your-workspace/.jez
-cp -r dotjez/sample-project/.jez   your-workspace/a-real-project/.jez
-```
-
-Either way: the root `CLAUDE.md` is the operator brief (it tells the agent it's the keeper of this workspace), and `.jez/CLAUDE.md` is the detail on how it's organised. Claude Code reads both automatically when you work in the folder. The example files (`acme-digital.md`, `new-client-onboarding.md`, and friends) show you the shape, so to add a real one you just copy the example. Read them, then make them yours.
-
-**New to working with an AI agent?** Just say *"help me set up this workspace."* The agent runs `.jez/playbooks/onboard.md`, which either asks you a few questions or hands you a prompt to paste into an AI you already use (ChatGPT, Claude, Gemini), and writes your `about.md` from the answers. That's the whole setup, and it's the fastest way to go from "new to this" to an agent that actually knows you.
+Name it whatever you like; nothing inside cares. Once it holds real client data, keep it **private**, don't push your filled-in workspace to a public remote.
 
 ## What the first session looks like
 
 ```
 You    →  "help me set up this workspace"
-Agent  →  runs onboard: interviews you, or takes a paste from an AI you already
-          use, or (with your ok) reads your GitHub / sent email to learn your
-          voice. Writes about.md.
+Agent  →  interviews you (or borrows a profile from an AI you already use),
+          writes about.md.
 
-You    →  "new client just signed — Acme Digital, web + email, contact Jane"
-Agent  →  copies the clients/ example to clients/acme-digital.md and fills it in.
+You    →  "new client signed — Acme Digital, web + email, contact Jane"
+Agent  →  copies the clients/ example to clients/acme-digital.md, fills it in.
 
    ...you work...
 
-Agent  →  at the end, appends a line to journal/: what you did, what's next.
+Agent  →  at the end, logs a line to journal/: what you did, what's next.
 ```
 
-Next time you open it, the agent reads `about.md` and the last journal entry first, so it already knows who you are and where you left off. That's the compounding: every session starts ahead of the last.
-
-## Keep it private
-
-⚠️ **Your filled-in `.jez/` will hold real people and client data**, in a folder it's tempting to `git push`. Don't push it to a public remote. Keep your workspace in a **private** repo, or add `.jez/` to your `.gitignore` if you only want it local. (This template repo is public only because its examples are made up. Yours won't be.)
+Next time, the agent reads `about.md` and the last journal entry first, so it already knows who you are and where you left off. Every session starts ahead of the last.
 
 ## For the agent
 
-If you're an AI agent pointed at this repo, here's your job.
-
-- The workspace-root `CLAUDE.md` is your operator brief; `.jez/CLAUDE.md` is the detail. Read both. (In Claude Code they load automatically once you're working in the folder.) Don't reinvent the conventions, follow what's there.
-- Start by reading `.jez/about.md` to learn who you're working for and how they like to work. If it's still placeholders, offer to fill it in with them, it's the most useful first thing you can do.
-- Then run the loop: **Ask** (check `.jez/` before researching), **Add** (write what you learn, one file per thing), **Tidy** (fix or delete what's stale, keep the briefs current).
-- Setting up a new person? Help them clone or copy this into a workspace folder, fill in `about.md` together, and use the sample files (each carries a "copy the shape" banner) as templates, copy from them, then delete the samples.
+Your brief is `CLAUDE.md` (how to operate this workspace) and `.jez/CLAUDE.md` (the detail on how it's organised). Both load automatically in Claude Code, read them and follow them, don't reinvent the conventions. In short: read `.jez/about.md` to learn who you serve (run `.jez/playbooks/onboard.md` if it's still blank), then run **Ask → Add → Tidy** and keep the briefs current.
 
 ## What's in here
 
 ```
-dotjez/                   ← clone this and it becomes your workspace
-├── README.md                (for the person setting it up)
-├── CLAUDE.md                the operator brief: tells the agent it's the keeper of this workspace
-├── .jez/                    your cross-project hub
-│   ├── CLAUDE.md               how it's organised, day to day (read this)
-│   ├── about.md               who you are + how you like to work (fill this in first)
-│   ├── clients/               one file per client or organisation
-│   ├── contacts/              people + relationships that span clients
-│   ├── decisions/             choices you made, and why (lightweight ADRs)
-│   ├── projects/              a one-pager per project (the work lives in its own folder)
-│   ├── knowledge/             patterns + gotchas that span projects
-│   ├── playbooks/             "how we do X"
-│   ├── research/              dated investigations
-│   ├── ideas/                 half-formed concepts
-│   ├── journal/               the agent's running log (what happened, per session)
-│   ├── inbox/                 somewhere to drop notes you'll file later
-│   └── secrets/               the rule for where credentials go (not the credentials)
-└── sample-project/          what a project with its own .jez looks like
-    ├── CLAUDE.md
-    ├── SESSION.md              living progress doc for multi-session work
-    └── .jez/                   plans / research / audits / artifacts / screenshots / scripts
+dotjez/                  ← clone this; it becomes your workspace
+├── CLAUDE.md               the agent's brief (how to operate this workspace)
+├── .jez/                   your knowledge hub, shared across every project
+│   ├── CLAUDE.md              how it's organised (the detail)
+│   ├── about.md              who you are + how you like to work (filled in first)
+│   ├── clients/  contacts/  decisions/  projects/
+│   ├── knowledge/  playbooks/  research/  ideas/
+│   ├── journal/              the agent's running log, per session
+│   ├── inbox/                somewhere to drop notes to file later
+│   └── secrets/              where credentials go (and don't)
+└── sample-project/         what a project's own .jez looks like
 ```
 
-## Why these folders (and not others)
+Each folder ships one worked example, copy it to make a real one. A `.jez` works at any level: the workspace has one (knowledge across all your work), and each project gets its own (scratch for that project). The question that decides where something goes: *will another project ever care about this?* The agent makes new folders as your work grows; it doesn't need them up front.
 
-A default folder has to clear a high bar: useful to almost everyone, across almost any job. Everything else the agent creates on demand (it knows how to, and when, see `.jez/CLAUDE.md`), so shipping a niche folder by default would just be clutter.
+## Credit
 
-**In by default:** `clients/ contacts/ decisions/ projects/ knowledge/ playbooks/ research/ ideas/` (the things nearly everyone accumulates), plus `inbox/` (drop the unfiled here), `secrets/` (the keep-out rule), and `about.md` (who you are, so the agent acts in your interest).
-
-**Left to make-when-needed**, so the workspace starts clean:
-
-| Not a default | Why |
-|---|---|
-| `meetings/`, `drafts/`, `notes/` | fit `research/` or `inbox/` until they earn their own folder |
-| `tasks/` / `todo/` | you probably already have a real tool for this |
-| `archive/` | the habit here is update-or-delete, not stash |
-| per-project `data/`, `assets/`, etc. | the agent adds these to a project when it needs them |
-
-The rule for both columns is the same: **a folder earns its place once about three things belong in it.** The agent makes them as your work grows.
-
-## Where the idea comes from
-
-- Andrej Karpathy's LLM wiki: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-- DOX: https://github.com/agent0ai/dox
+The same idea as Andrej Karpathy's [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) and the [DOX](https://github.com/agent0ai/dox) pattern, kept small.
