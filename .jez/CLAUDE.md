@@ -102,7 +102,7 @@ This is the part that keeps it worth reading. Rules of thumb, in priority order:
 
 The discipline is "one more file usefully filed," not "design the perfect structure."
 
-You can do all of this by hand as you work, and that needs nothing. When the wiki gets big, the boring parts, flagging notes past ~90 days as `needs-review`, regenerating a folder index, spotting orphans, are what a **scheduled pass** is for: a cron, a `/loop`, a caretaker skill (or goanna's worker if you graduate). It reads the `updated`/`status` frontmatter and does the sweep so you don't have to. dotjez needs none of it to start; reach for it only when tending by hand stops keeping up.
+You can do all of this by hand as you work, and that needs nothing. When the wiki gets big, the boring parts, flagging notes past ~90 days as `needs-review`, regenerating a folder index, spotting orphans, are what a **scheduled pass** is for: a cron, a `/loop`, a caretaker skill, or a fuller runtime if you graduate to one. It reads the `updated`/`status` frontmatter and does the sweep so you don't have to. dotjez needs none of it to start; reach for it only when tending by hand stops keeping up.
 
 ## Secrets
 
