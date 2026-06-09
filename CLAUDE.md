@@ -28,3 +28,5 @@ this-workspace/
 ```
 
 That's the whole system: markdown an agent reads and keeps current. No app, no database, no cloud required. Copy the repo, come into this folder, open your agent, go to work.
+
+Keep it private: this workspace will hold real people and client data, so it lives in a private repo or local-only, never a public remote. Don't suggest publishing it.

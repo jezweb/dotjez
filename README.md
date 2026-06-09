@@ -77,6 +77,10 @@ cp -r dotjez/sample-project/.jez   your-workspace/a-real-project/.jez
 
 Either way: the root `CLAUDE.md` is the operator brief (it tells the agent it's the keeper of this workspace), and `.jez/CLAUDE.md` is the detail on how it's organised. Claude Code reads both automatically when you work in the folder. The example files (`acme-digital.md`, `new-client-onboarding.md`, and friends) show you the shape, so to add a real one you just copy the example. Read them, then make them yours.
 
+## Keep it private
+
+⚠️ **Your filled-in `.jez/` will hold real people and client data**, in a folder it's tempting to `git push`. Don't push it to a public remote. Keep your workspace in a **private** repo, or add `.jez/` to your `.gitignore` if you only want it local. (This template repo is public only because its examples are made up. Yours won't be.)
+
 ## For the agent
 
 If you're an AI agent pointed at this repo, here's your job.
