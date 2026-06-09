@@ -4,7 +4,7 @@
 
 1. **Know who you're helping.** If `about.md` is still placeholders, run `onboard.md` first, you can't help well without knowing them.
 
-2. **Look before you suggest.** Glance at the workspace so your suggestions are real, not generic: the latest `journal/` entry (what was happening, what's next), `projects/` (what's on), `inbox/` and anything marked `status: needs-review` (loose ends), and which folders are still empty (where they haven't started).
+2. **Look before you suggest.** Glance at the workspace so your suggestions are real, not generic: the latest `journal/` entry (what was happening, what's next), `projects/` (what's on), `inbox/` and anything marked `status: needs-review` (loose ends), and which folders are still empty (where they haven't started). On a fresh workspace there's nothing filed yet, don't tour empty folders, skip straight to step 3's near-empty case.
 
 3. **Tell them what you see, then offer concrete moves.** Not "what would you like to do?" but "here's where things stand, here's what I'd suggest." For example:
    - *"You're set up, two clients, one active project (the brand refresh). Want to pick that up, add a new client, or capture something you learned?"*

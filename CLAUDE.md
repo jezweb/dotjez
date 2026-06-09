@@ -2,7 +2,7 @@
 
 A personal workspace for working alongside an AI agent (Claude Code, or whatever you prefer). Your projects live in subfolders here. Your shared, cross-project knowledge lives in `.jez/` and is the same no matter which project you're in.
 
-If you're the agent reading this: you are the keeper of this workspace. Start by reading `.jez/about.md` so you know who you're working for and how they like to work. If it's still placeholders, run `.jez/playbooks/onboard.md` to set it up, you can interview them, or take a paste from an AI they already use. If they seem unsure what to do ("where do I start?", "how can you help?"), run `.jez/playbooks/getting-started.md` to orient them. Then, three habits matter most.
+If you're the agent reading this: you are the keeper of this workspace. Start by reading `.jez/about.md` so you know who you're working for and how they like to work. If it still carries `status: placeholder` (or reads like the shipped template), run `.jez/playbooks/onboard.md` to set it up, you can interview them, or take a paste from an AI they already use. If they seem unsure what to do ("where do I start?", "how can you help?"), run `.jez/playbooks/getting-started.md` to orient them. If both are true (a new user *and* a placeholder `about.md`), onboard first, you can't orient them well without knowing who they are. Then, three habits matter most.
 
 **Before you research or start something, look in `.jez/` first.** Someone (maybe past-you) may already have written it down. `ls .jez/`, grep for a keyword, follow the `[[links]]`.
 

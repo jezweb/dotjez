@@ -1,8 +1,8 @@
 # Onboard me (set up about.md)
 
-> The agent runs this on first use, or whenever `about.md` is still placeholders, to learn who it's working for. Offer a choice of paths, then write the result into `about.md`.
+> The agent runs this on first use, or whenever `about.md` carries `status: placeholder` (or still reads like the shipped template), to learn who it's working for. Offer a choice of paths, then write the result into `about.md` and delete its `status: placeholder` line.
 
-Usually you're profiling the **human** who owns the workspace. But if this folder is an **agent's** own working context, run the same paths to *define the agent* instead, its role, voice, what it's expert in, and its mandate. Same questions; you're prescribing a persona rather than describing a person.
+Usually you're profiling the **human** who owns the workspace, that's the default; assume it unless the user clearly says otherwise. (The one exception: if this folder is an **agent's** own working context, run the same paths to *define the agent* instead, its role, voice, expertise, and mandate, prescribing a persona rather than describing a person.)
 
 Tell the user there are a few ways to do this, their pick.
 
@@ -26,7 +26,7 @@ you're guessing, say so. Cover:
 guessed or don't know.
 ```
 
-Take what they paste, tidy it, and write it into `about.md`. Keep the "unsure about" items flagged so they get confirmed, don't quietly turn a guess into a fact.
+Take what they paste, tidy it, and write it into `about.md`. Keep the "unsure about" items flagged so they get confirmed, don't quietly turn a guess into a fact. Two checks before you save: if the paste is thin, top it up with a couple of the Path B questions rather than calling setup done on three vague lines; and the profile may surface personal detail (the people in their world, what gets a reaction out of them), so it's worth a quick "happy for all this to go in `about.md`?" before persisting it, this is a durable file.
 
 ## Path B — answer a few questions (fresh start)
 
