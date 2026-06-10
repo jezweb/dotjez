@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "dotjez",
+  "description": "The dotjez skill set — cross-cutting how-to-work-with-an-agent skills.",
+  "owner": {
+    "name": "Jeremy Dawes / Jezweb",
+    "email": "jeremy@jezweb.net"
+  },
+  "plugins": [
+    {
+      "name": "dotjez",
+      "description": "Ten cross-cutting agent skills: planning (imagine, challenge, plan-and-build, brains-trust), don't-trust-memory (verify-current, truth-seeking), verify-visually, and working-with-agents (agent-delegation, run-a-role-agent, run-a-self-refining-loop).",
+      "source": ".",
+      "category": "workflow"
+    }
+  ]
+}

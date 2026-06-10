@@ -1,3 +1,8 @@
+---
+name: run-a-self-refining-loop
+description: Use when a role has substantial repeated work one session can't finish (enriching hundreds of records, grinding a backlog, sweeping a large catalogue) AND the work keeps teaching you how to do it better. Covers the tick shape, the separate state files, idempotency, queue-learnings-apply-next-tick, and the rules that keep a self-modifying loop safe. The deep end of run-a-role-agent; don't reach for it for one-offs or fixed procedures.
+---
+
 # Run a self-refining loop (an agent that works through a backlog and tunes itself)
 
 > The deep end of [[run-a-role-agent]]. Reach for this when a role has *substantial repeated work*, more than one session can finish: enriching a few hundred records, working through a backlog, sweeping a large catalogue. The loop processes a slice each tick and, over days, improves its own procedure from what it learns. It runs on plain Claude Code, `/loop` (or a cron) is the heartbeat, sub-task agents do the batches. No cloud, no extra tooling.

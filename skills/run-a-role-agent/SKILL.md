@@ -1,3 +1,8 @@
+---
+name: run-a-role-agent
+description: Use when setting up an ongoing agent dedicated to a role rather than a one-off task, a webmaster, researcher, bookkeeper, support triager. Covers shaping the persona and its lane, populating a specialist with real reference (not a generic shell), running it with one bounded output per run, and putting it on a heartbeat. For backlog-grinding work that tunes its own procedure, see run-a-self-refining-loop.
+---
+
 # Run a role agent (an ongoing agent for a specific job)
 
 > When the user wants an agent dedicated to a *role*, not a one-off, a webmaster, a researcher, a bookkeeper, a support triager. A role agent is just a folder with a `.jez` whose `about.md` defines the role. You set it up, then run sessions in it: by hand, or on a loop/cron if it should keep going.
@@ -42,4 +47,4 @@ Pick a generous interval. A heartbeat is not a workload, most fires should be "n
 
 That's the whole pattern. A role agent isn't a new kind of thing, it's the folder-with-`.jez` primitive with a persona and a cadence, running on plain Claude Code: the heartbeat schedules it, sub-task agents do any heavy batches. Coordinating many such agents at once is the bit beyond dotjez, not the role itself.
 
-When the work is bigger than one session can finish and the loop should *tune its own procedure* as it goes (a backlog to grind through, patterns worth capturing), that's its own playbook: see [[run-a-self-refining-loop]] for the tick shape, the files it keeps, and the handful of rules that keep a self-modifying loop safe.
+When the work is bigger than one session can finish and the loop should *tune its own procedure* as it goes (a backlog to grind through, patterns worth capturing), that's its own skill: see [[run-a-self-refining-loop]] for the tick shape, the files it keeps, and the handful of rules that keep a self-modifying loop safe.
