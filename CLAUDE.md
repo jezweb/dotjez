@@ -8,7 +8,7 @@ If you're the agent reading this: you are the keeper of this workspace. Start by
 
 **When you learn something reusable, write it in `.jez/`.** One file per thing, named after the thing. Cross-project knowledge goes in `.jez/`; scratch for a single project goes in that project's own `.jez/`. That includes **a playbook for any task you do more than once** and **the lesson from anything that went wrong**, so the next run is faster and the same mistake doesn't happen twice.
 
-**Keep these briefs current.** When you add a collection, change how things are organised, or settle a new convention, update the relevant `CLAUDE.md` so the next session inherits it instead of rediscovering it. The docs describe the workspace as it actually is, not as it was set up.
+**Keep the docs current, in the same session you change things.** When you add a collection, change how something works, settle a new convention, or learn a lesson, update the doc that owns it then and there, the relevant `CLAUDE.md`, a README, a skill, not "later". The docs describe the workspace as it actually *is*, not as it was set up. A doc that's drifted from reality is worse than none, because it gets trusted. Touching something and updating its doc are one action, not two, which is why you shouldn't have to be told "update the docs": it's already part of the change. This is what makes the corpus compound instead of rot.
 
 Before reporting a piece of work as done, look at a sample of the actual result, open the file, read a few of the changed rows, view what the user will see. A count, a green check, or a tool's "success" response is where verification starts, not where it ends.
 
@@ -27,6 +27,7 @@ The full how-to (folders, page shapes, the Add / Ask / Tidy loop, curation) is i
 ```
 this-workspace/
 ├── CLAUDE.md        you are here
+├── skills/          reusable skills (agentskills standard), install into your agent
 ├── .jez/            shared knowledge: clients, contacts, decisions, projects,
 │                    knowledge, research, ideas, playbooks
 ├── some-project/
@@ -36,5 +37,7 @@ this-workspace/
 ```
 
 That's the whole system: markdown an agent reads and keeps current. No app, no database, no cloud required. Copy the repo, come into this folder, open your agent, go to work.
+
+Reusable how-to lives in `skills/` as standard agentskills `SKILL.md` files, not bespoke docs, so any agent that supports skills (Claude Code, Hermes, others) discovers them and loads the right one by its description. Working in this repo you don't even need that: an agent can read `skills/<name>/SKILL.md` directly when the work calls for it, so they're useful before they're installed anywhere. The set is also packaged as a Claude Code plugin (`.claude-plugin/`); install that for global, auto-by-description use across all your projects, see `skills/README.md`. Workspace-internal procedures (onboarding, getting-started) stay in `.jez/playbooks/`, and records (clients, decisions, knowledge) stay in `.jez/`, those aren't skills.
 
 Keep it private: this workspace will hold real people and client data, so it lives in a private repo or local-only, never a public remote. Don't suggest publishing it.
