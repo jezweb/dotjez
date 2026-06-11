@@ -16,4 +16,6 @@ A green build, a passing test, and "looks good" are not the same as *you looked 
 
 **Mind the capture traps.** Screenshots on a Retina display come back 2x and oversized; cap them (`sips -Z 1440`) before committing or re-reading them, or they blow the context budget. Don't trigger native dialogs or alerts in a scripted browser, they block the session.
 
+**No verdict without interaction.** For anything interactive, looking isn't enough either: type into the form, click the button, send the message, and watch what happens. A review that never touched the thing isn't a review; if you couldn't interact, say "couldn't verify" rather than padding out a verdict — an honest Incomplete beats a confident Pass nobody earned.
+
 The failure this prevents: shipping the broken layout, the clipped button, the wrong or missing image, the heading that rendered flat, because a passing build told you it was done and nobody opened the page. This is the visual arm of "verify by inspection" (see `plan-and-build`): for visual work, inspection means render and look.

@@ -32,6 +32,7 @@ Or install the whole set as a **plugin** — the easiest route in Claude Code: `
 - `run-a-role-agent/` — set up an ongoing agent dedicated to a role (webmaster, researcher, bookkeeper).
 - `run-a-self-refining-loop/` — grind a backlog over many ticks with a procedure that tunes itself; the safe version.
 - `agent-delegation/` — hand a discrete task to a sub-agent well: script-vs-agent (and why scripts compound), spec-to-the-task, protect the main context.
+- `orchestrate-agents/` — pick the multi-agent arrangement (single loop, pipeline, routing, parallel, orchestrator-workers, triage funnel), match roles to model temperaments, and the mechanics that keep it safe and cheap. The layer above delegation and role agents.
 - `imagine/` — think past the brief and find the bigger product hiding in the request (expansive).
 - `challenge/` — stress-test a plan before building: assumptions, unknowns, scope that will change (adversarial).
 - `truth-seeking/` — don't invent factual claims; verify and cite, or leave the gap honestly (the factual-content sibling of `verify-current`).

@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "dotjez",
-      "description": "Cross-cutting agent skills: planning and stress-testing ideas, prompt-writing, don't-trust-memory verification (facts, tooling, and visuals), stranger-testing docs before they ship, delegation, role agents and self-refining loops, and the occasional step-back reflection.",
+      "description": "Cross-cutting agent skills: planning and stress-testing ideas, prompt-writing, don't-trust-memory verification (facts, tooling, and visuals), stranger-testing docs before they ship, delegation and multi-agent orchestration, role agents and self-refining loops, and the occasional step-back reflection.",
       "source": ".",
       "category": "workflow"
     }
