@@ -35,6 +35,7 @@ Or install the whole set as a **plugin** — the easiest route in Claude Code: `
 - `imagine/` — think past the brief and find the bigger product hiding in the request (expansive).
 - `challenge/` — stress-test a plan before building: assumptions, unknowns, scope that will change (adversarial).
 - `truth-seeking/` — don't invent factual claims; verify and cite, or leave the gap honestly (the factual-content sibling of `verify-current`).
+- `stranger-test/` — before shipping docs that agents or newcomers read cold: audit every claim (derived / checkable / judgement), then have a no-context agent actually use the docs and report where it guessed.
 - `reflect/` — an occasional step-back (weekly, at a milestone): for the agent and the human both, what's the shape of the run, what patterns, what to change.
 
 (More essentials welcome, see the authoring discipline above.)

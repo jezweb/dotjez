@@ -10,7 +10,7 @@ The shared, cross-project knowledge for this workspace: clients, contacts, decis
 
 **Ask** — before starting, look here first: `ls` the folder, grep for a keyword, follow the `[[links]]`.
 
-**Tidy** — when you spot something stale or wrong, fix it or delete it. Wrong knowledge is worse than none. And when a note disagrees with what you observe live, the observation wins: update the note; never work around fresh evidence to honour a stale file.
+**Tidy** — when you spot something stale or wrong, fix it or delete it. Wrong knowledge is worse than none. And when a note disagrees with what you observe live, the observation wins: update the note; never work around fresh evidence to honour a stale file. At sentence level the quick test is: derived (restates a source — delete or point at it), checkable (a live-world claim — verify it), judgement (the part worth keeping — sharpen it). Before shipping docs that strangers will read cold, the `stranger-test` skill runs this properly.
 
 ## Where things go
 
@@ -97,6 +97,7 @@ This is the part that keeps it worth reading. Rules of thumb, in priority order:
 - **Keep the briefs current.** When you change how things are organised or settle a new convention, update this file. Give a folder its own short `CLAUDE.md` once it grows its own rules (a naming scheme, a sub-structure, a collection-specific gotcha); until then the example file is enough. A good folder `CLAUDE.md` is brief: what's here, the local rule or gotcha, and a pointer to deeper docs, not a copy of them. Stale instructions are worse than none.
 - **Promote, don't pile up.** A note starts in `inbox/`, matures into `ideas/` or `research/`, and when it's solid moves to `knowledge/` or `playbooks/`. Move, don't copy. If you promote a finding out of a research file, mark that file `status: promoted` so nobody mistakes it for live.
 - **Lean on names, not hand-kept index files.** `ls` + grep + `[[links]]` is enough up to a point. When a folder gets big enough that scanning is real work, the fix is to **split by topic** (above) so each folder is small again, plus the `updated` field so grep/sort surfaces what's recent. Don't hand-maintain an `_index.md`: it goes stale the moment you forget, and a wrong index is worse than none. If you genuinely want a folder index, have a periodic pass *generate* it from the files' frontmatter and never hand-edit it (the way a runtime would). Index = generated, or not at all.
+- **Tend the total weight of what always loads.** Every auto-loading brief (the `CLAUDE.md` files, any global rules) is a prompt the agent carries into *every* session. Each line can earn its place individually while the sum fails the test: attention is finite, and forty small always-on files dilute it like one bloated one. Keep the always-on layer small and universal; topical material belongs where it loads on demand instead — a skill (its description is the trigger) or a knowledge page (read when the work calls for it). When a brief keeps growing, demote whole sections to skills or knowledge rather than compressing the prose in place.
 
 The discipline is "one more file usefully filed," not "design the perfect structure."
 
