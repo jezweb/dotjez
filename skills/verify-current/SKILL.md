@@ -1,6 +1,6 @@
 ---
 name: verify-current
-description: Use before relying on any fast-moving fact you might "know" from training, a model ID or its capabilities, an AI or HTTP API shape, a library or framework version (Vite, Astro, React, an SDK), a Cloudflare binding or wrangler config, or an MCP standard. Also fires when scoping or planning a build, read the current docs of the stack before designing how it works. Your training data is stale on all of these.
+description: Use before relying on any fast-moving fact you might "know" from training, a model ID or its capabilities, an AI or HTTP API shape, a library or framework version (Vite, Astro, React, an SDK), a Cloudflare binding or wrangler config, or an MCP standard. Also fires when scoping or planning a build (read the current docs of the stack before designing how it works), and when debugging a failure that might just be an outdated CLI, SDK, or package. Your training data is stale on all of these.
 ---
 
 # Verify current, don't build from memory
@@ -27,4 +27,6 @@ Your training data is older than the current stable of everything that moves fas
 
 **When planning a build, scope the stack's current docs first.** Before you design how a feature works on top of a library or framework, read its current docs, not your memory of how it worked a year ago. A config key gets renamed, a default flips, a build step appears. Designing from a stale mental model bakes the staleness into the whole plan, and you discover it the expensive way. Read first, then plan.
 
-The failure this prevents: confidently shipping a model id that's a generation old, a deprecated API call, a library pattern that changed under you, or a wrong binding key, each of which looks right from memory and only breaks live.
+**Keep the tooling current, not just the facts.** The same drift applies to what's installed. AI, web, and dev tooling now ships at a pace where years of change land in weeks, and a surprising share of "bugs" are nothing but an old CLI, SDK, or package: fixed upstream months ago, still failing locally. So check versions *before* debugging deeply, not after: the agent harness itself, the platform CLI, the AI SDKs, the project's dependencies. Patch and minor updates in fast-moving ecosystems fix more than they break; take them freely and early. Majors deserve a changelog glance first. A months-old lockfile in anything AI-related is a smell worth acting on, and "it worked last month" is evidence *for* updating, not against it.
+
+The failure this prevents: confidently shipping a model id that's a generation old, a deprecated API call, a library pattern that changed under you, or a wrong binding key, each of which looks right from memory and only breaks live. And its quieter sibling: hours spent debugging a failure that an update had already fixed.

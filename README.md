@@ -66,6 +66,8 @@ Most folders ship a worked example; copy it to make a real one. A `.jez` works a
 
 Two notes for browsing it yourself: `.jez` is a hidden folder, so your agent always sees it but Finder won't until you press `Cmd+Shift+.` (or just ask the agent to open a file). And the name honours the workspace's first user; call your folder anything, but keep the `.jez/` directory name itself: it's what the briefs and sibling tools key on.
 
+The capabilities travel two ways. The **workspace briefs** load when your agent is opened in (or under) this folder; during setup the agent offers to add a pointer in your agent's global config so sessions started elsewhere still find the workspace. The **skills** install once and travel everywhere: in Claude Code, `/plugin marketplace add jezweb/dotjez`, then install `dotjez` from the `/plugin` menu.
+
 ## Back it up
 
 Your workspace is just files on your Mac, so back them up. [**dotbackup**](https://github.com/jezweb/dotbackup) is the sibling tool: a small desktop app that backs up your `.jez` workspace (and any other folders) to **your own** Cloudflare R2, encrypted, on a schedule. You own the bucket and the keys, same spirit as dotjez.
