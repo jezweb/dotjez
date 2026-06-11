@@ -1,6 +1,6 @@
 # Skills
 
-Reusable capabilities in the [agentskills.io](https://agentskills.io) standard: each is a folder with a `SKILL.md`, frontmatter (`name` + `description`) followed by the guidance. Agents that support skills (Claude Code, Hermes, and others) discover them by the `description` and load them at the point of need. So the **description is the load-bearing field**: it must say plainly *when* to use the skill.
+Reusable capabilities in the [agentskills.io](https://agentskills.io) standard: each is a folder with a `SKILL.md`, frontmatter (`name` + `description`) followed by the guidance. Agents that support skills (Claude Code and others) discover them by the `description` and load them at the point of need. So the **description is the load-bearing field**: it must say plainly *when* to use the skill.
 
 Why standard skills and not bespoke playbook docs: a skill in this format is discovered automatically and travels to any agent unchanged. A bespoke doc only helps if someone points an agent at it. The convergent format is the feature, not a constraint.
 
@@ -8,10 +8,10 @@ Why standard skills and not bespoke playbook docs: a skill in this format is dis
 
 These live here as the source. To make an agent actually use them, install them into its skill path (copy or symlink):
 
-- **Claude Code**: into `~/.agents/skills/` (global) or a project's `.claude/skills/`.
-- **Hermes**: into the active profile's `skills/`.
+- **Claude Code**: into `~/.claude/skills/` (personal, all projects) or a project's `.claude/skills/`.
+- **Other agents**: many follow the agentskills.io convention of `~/.agents/skills/`; check your agent's docs.
 
-Verify the current path for your agent before wiring, these move.
+Verify the current path for your agent before wiring; these move.
 
 Or install the whole set as a **plugin** (for those who know plugins): the repo is wrapped as a Claude Code plugin at `.claude-plugin/`. `/plugin marketplace add <this-repo>` then `/plugin install dotjez`, and all the skills become available globally, auto-discovered by description. The `SKILL.md` folders stay the portable source; the plugin is just one delivery wrapper, and an agent working in the repo can read them as files regardless.
 
@@ -43,7 +43,6 @@ Or install the whole set as a **plugin** (for those who know plugins): the repo 
 
 ## What is NOT a skill
 
-- **Workspace-internal playbooks** (onboarding, getting-started) stay in `.jez/playbooks/`, they operate *this* workspace and aren't portable capabilities.
-- **Records** (clients, decisions, knowledge, the journal) stay in `.jez/`, they're the knowledge corpus, not skills.
-
-For measured, maintained Cloudflare facts and gotchas, the canonical skill is **flare-bench's `cloudflare-current`** (derived from live deploys with measured lift), not a hand-written copy here.
+- **Workspace-internal playbooks** (onboarding, getting-started) stay in `.jez/playbooks/`: they operate *this* workspace and aren't portable capabilities.
+- **Records** (clients, decisions, knowledge, the journal) stay in `.jez/`: they're the knowledge corpus, not skills.
+- **Fast-moving reference data** (current model ids, platform facts, version-specific config) doesn't belong baked into a skill at all; a skill that carries it goes stale by next quarter. Skills point at where to *check* (see `verify-current`); the values live at the source.

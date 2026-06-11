@@ -6,7 +6,7 @@ No app, no database, no cloud. It's just folders. Clone it, open your agent in t
 
 ## The idea
 
-Keep what you learn as one file per thing: a client, a decision, a project, a gotcha, an idea. Over time it *compounds*, instead of re-researching, you and the agent read what's already there and add to it. Three moves, the whole loop:
+Keep what you learn as one file per thing: a client, a decision, a project, a gotcha, an idea. Over time it *compounds*: instead of re-researching, you and the agent read what's already there and add to it. Three moves, the whole loop:
 
 - **Add** — learned something reusable? Write it down, or update the file that's already there.
 - **Ask** — starting something? Check what's already here first.
@@ -14,15 +14,15 @@ Keep what you learn as one file per thing: a client, a decision, a project, a go
 
 ## Start
 
-The easy way: open your agent in the folder and say **"help me set up this workspace."** It interviews you, or borrows a profile from an AI you already use (ChatGPT, Claude, Gemini), and writes your `about.md`. That's the whole setup.
+You don't set anything up by hand; your agent does it. Tell it (Claude Code, or whatever you use):
 
-To get the folder:
+> Clone https://github.com/jezweb/dotjez into a new folder for me, then help me set up the workspace.
 
-```
-git clone https://github.com/jezweb/dotjez ~/workspace && cd ~/workspace
-```
+That's the whole install. The agent gets the folder, reads the briefs inside, then interviews you, or borrows a profile from an AI you already use (ChatGPT, Claude, Gemini), and writes your `about.md`.
 
-Name it whatever you like; nothing inside cares. Once it holds real client data, keep it **private**, don't push your filled-in workspace to a public remote.
+Prefer to fetch it yourself? `git clone https://github.com/jezweb/dotjez ~/workspace`, then open your agent in the folder and say **"help me set up this workspace."**
+
+Name the folder whatever you like; nothing inside cares. Once it holds real client data, keep it **private**: don't push your filled-in workspace to a public remote (the agent re-points the git remote during setup).
 
 ## What the first session looks like
 
@@ -43,7 +43,7 @@ Next time, the agent reads `about.md` and the last journal entry first, so it al
 
 ## For the agent
 
-Your brief is `CLAUDE.md` (how to operate this workspace) and `.jez/CLAUDE.md` (the detail on how it's organised). Both load automatically in Claude Code, read them and follow them, don't reinvent the conventions. In short: read `.jez/about.md` to learn who you serve (run `.jez/playbooks/onboard.md` if it's still blank), then run **Ask → Add → Tidy** and keep the briefs current.
+Your brief is `CLAUDE.md` (how to operate this workspace, loads automatically in Claude Code) and `.jez/CLAUDE.md` (the detail on how it's organised; it only auto-loads when you work inside `.jez/`, so read it yourself). Follow them; don't reinvent the conventions. In short: read `.jez/about.md` to learn who you serve (run `.jez/playbooks/onboard.md` if it's still blank), then run **Ask → Add → Tidy** and keep the briefs current.
 
 ## What's in here
 
@@ -58,10 +58,13 @@ dotjez/                  ← clone this; it becomes your workspace
 │   ├── journal/              the agent's running log, per session
 │   ├── inbox/                somewhere to drop notes to file later
 │   └── secrets/              where credentials go (and don't)
+├── skills/                  reusable agent skills (use in place, or install)
 └── sample-project/         what a project's own .jez looks like
 ```
 
-Each folder ships one worked example, copy it to make a real one. A `.jez` works at any level: the workspace has one (knowledge across all your work), and each project gets its own (scratch for that project). The question that decides where something goes: *will another project ever care about this?* The agent makes new folders as your work grows; it doesn't need them up front.
+Most folders ship a worked example; copy it to make a real one. A `.jez` works at any level: the workspace has one (knowledge across all your work), and each project gets its own (scratch for that project). The question that decides where something goes: *will another project ever care about this?* The agent makes new folders as your work grows; it doesn't need them up front.
+
+Two notes for browsing it yourself: `.jez` is a hidden folder, so your agent always sees it but Finder won't until you press `Cmd+Shift+.` (or just ask the agent to open a file). And the name honours the workspace's first user; call your folder anything, but keep the `.jez/` directory name itself: it's what the briefs and sibling tools key on.
 
 ## Back it up
 

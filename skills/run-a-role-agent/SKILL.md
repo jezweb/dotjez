@@ -13,7 +13,7 @@ description: Use when setting up an ongoing agent dedicated to a role rather tha
    - **What it does** and, just as important, **what it does NOT do**, its lane.
    - **Boundaries** — what it must never do without asking (make live changes, send email, spend money).
    - **How it works** — its standard of "done," its voice.
-3. Add a role `CLAUDE.md` only once it actually has a convention worth recording, not in anticipation of one. A file full of "to confirm" placeholders is pre-building, leave it until there's a real rule to write, and let the cascade cover the role until then.
+3. Add a role `CLAUDE.md` only once it actually has a convention worth recording, not in anticipation of one. A file full of "to confirm" placeholders is pre-building; leave it until there's a real rule to write. The workspace-level briefs cover the role until then.
 4. If the role works from a list of inputs (sites to check, accounts to watch, a queue), keep that list in a file in its `.jez/` that it reads each run, not baked into `about.md`. The inputs change far more often than the persona, so they want their own home, and the role should read the list, never guess it.
 
 ## If it's a specialist, populate it, don't just shape it
@@ -35,7 +35,7 @@ The test of a specialist: *could it do one real job well today?* If there's a pe
 ## Make it ongoing
 If the role should keep working without you starting each session, put it on a heartbeat that opens a session in its folder. Two routes, in order:
 
-- **Start with `/loop`** — it reruns a prompt on an interval while a session is open. Begin here: it's the cheapest way to watch the first few ticks behave before you trust it.
+- **Start with a session-bound loop** — in Claude Code that's `/loop`, which reruns a prompt on an interval while a session is open (use your harness's equivalent). Begin here: it's the cheapest way to watch the first few ticks behave before you trust it.
 - **Then a real schedule** — one that fires even when you're not at the machine. *How* that works depends on the user's setup (their OS scheduler, their agent harness), so ask what they've got rather than assuming a command. A schedule that survives a closed laptop, or runs the same role across machines, is the cloud layer beyond plain dotjez.
 
 Pick a generous interval. A heartbeat is not a workload, most fires should be "nothing to do, exit," so checking every 30–60 minutes is usually plenty, not every minute. A few hard-won rules for loops:

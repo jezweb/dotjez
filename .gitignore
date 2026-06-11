@@ -4,7 +4,10 @@
 **/.jez/secrets/*
 !**/.jez/secrets/README.md
 
-# binaries don't belong in git; keep them in .jez/screenshots for easy access
+# binaries don't belong in git; keep them in .jez/screenshots for easy access.
+# NOTE: images/video are ignored workspace-wide to keep the repo light. If a
+# project's assets (logos, final artwork) must be versioned, `git add -f` them
+# or scope these lines — don't let them silently never get committed.
 **/.jez/screenshots/*
 !**/.jez/screenshots/README.md
 *.png

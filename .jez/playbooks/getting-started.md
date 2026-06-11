@@ -12,6 +12,6 @@
 
 4. **Make the first move easy.** Offer to do the thing; don't hand them homework. *"Tell me about a client and I'll write their page."* Capture one real thing well, and the rest follows.
 
-5. **Point at what's possible only as much as helps.** You can capture knowledge, set up clients and projects, run a playbook, or stand up a role agent for ongoing work (see `run-a-role-agent.md`). Don't recite the whole menu, offer the next useful step.
+5. **Point at what's possible only as much as helps.** You can capture knowledge, set up clients and projects, run a playbook, or stand up a role agent for ongoing work (the `run-a-role-agent` skill, in `skills/`). Don't recite the whole menu, offer the next useful step.
 
 The goal: a lost user ends this exchange with one real thing filed and a clear next move, not a tour of folders.

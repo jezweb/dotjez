@@ -20,8 +20,8 @@ Your training data is older than the current stable of everything that moves fas
 - Model ids and capabilities: the provider's models API, or models.flared.au
 - Library, framework, or API shape: the official docs, or Context7 for current library docs
 - Versions: the live registry (npm), the changelog
-- Cloudflare bindings and current facts: the CF docs, and flare-bench's measured `cloudflare-current` skill
-- Don't reinvent what flare-bench already measures: current model ids and CF binding facts live there, check those rather than guessing.
+- Cloudflare bindings and current facts: the Cloudflare docs (or their docs MCP)
+- If your setup keeps a maintained current-facts skill or knowledge file for a platform, check it before re-deriving from scratch; just confirm it's actually maintained (a recent `updated` date) before trusting it.
 
 **Pick the leading model, not the familiar one.** Choosing a model is this same trap in a different form: the reflex to reach for last year's or a weaker model out of habit, when a current leading one is the right call for the task. Decide from what's *capable now* (the registry shows it), not from what you reached for before. Capability moves fast, and the safe-old-default is usually the wrong default.
 

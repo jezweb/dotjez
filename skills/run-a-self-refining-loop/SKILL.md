@@ -5,7 +5,7 @@ description: Use when a role has substantial repeated work one session can't fin
 
 # Run a self-refining loop (an agent that works through a backlog and tunes itself)
 
-> The deep end of [[run-a-role-agent]]. Reach for this when a role has *substantial repeated work*, more than one session can finish: enriching a few hundred records, working through a backlog, sweeping a large catalogue. The loop processes a slice each tick and, over days, improves its own procedure from what it learns. It runs on plain Claude Code, `/loop` (or a cron) is the heartbeat, sub-task agents do the batches. No cloud, no extra tooling.
+> The deep end of [[run-a-role-agent]]. Reach for this when a role has *substantial repeated work*, more than one session can finish: enriching a few hundred records, working through a backlog, sweeping a large catalogue. The loop processes a slice each tick and, over days, improves its own procedure from what it learns. It runs on plain Claude Code: `/loop` (the rerun-a-prompt-on-an-interval command) or a cron is the heartbeat, and sub-task agents do the batches. No cloud, no extra tooling.
 
 Don't reach for it for one-off tasks, work that should be human-paced (a decision conversation), or a job whose procedure is already known and won't change. That's just [[run-a-role-agent]] with a cadence. This pattern earns its extra moving parts only when there's a real cohort to grind through *and* the work keeps teaching you how to do it better.
 
