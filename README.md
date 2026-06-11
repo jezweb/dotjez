@@ -63,6 +63,10 @@ dotjez/                  ← clone this; it becomes your workspace
 
 Each folder ships one worked example, copy it to make a real one. A `.jez` works at any level: the workspace has one (knowledge across all your work), and each project gets its own (scratch for that project). The question that decides where something goes: *will another project ever care about this?* The agent makes new folders as your work grows; it doesn't need them up front.
 
+## Back it up
+
+Your workspace is just files on your Mac, so back them up. [**dotbackup**](https://github.com/jezweb/dotbackup) is the sibling tool: a small desktop app that backs up your `.jez` workspace (and any other folders) to **your own** Cloudflare R2, encrypted, on a schedule. You own the bucket and the keys, same spirit as dotjez.
+
 ## Credit
 
 The same idea as Andrej Karpathy's [LLM wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) and the [DOX](https://github.com/agent0ai/dox) pattern, kept small.
