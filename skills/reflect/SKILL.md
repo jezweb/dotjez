@@ -1,6 +1,6 @@
 ---
 name: reflect
-description: Use for an occasional step-back, weekly, at a milestone, or after a big push, NOT every session. A reflection for both the agent and the human: what got done, the patterns worth noticing, what was learned that should change how the work is done, and what to prune or add.
+description: "Use for an occasional step-back, weekly, at a milestone, or after a big push, NOT every session. A reflection for both the agent and the human: what got done, the patterns worth noticing, what was learned that should change how the work is done, and what to prune or add."
 ---
 
 # Reflect: step back, for the agent and the human
