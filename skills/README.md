@@ -26,6 +26,7 @@ Or install the whole set as a **plugin** — the easiest route in Claude Code: `
 
 - `plan-and-build/` — how to plan and approach any non-trivial build.
 - `write-prompts/` — goal + contract + knowledge, no theatre; worked examples over templates; prompt style and model temperament as levers; right-or-null for derived facts.
+- `write-image-prompts/` — the image sibling: concrete specifics over quality adjectives, specify the world not just the subject, presence not absence, reference images anchor style and sets, design for the image's job.
 - `verify-current/` — check fast-moving facts (model ids, API shapes, library/framework versions, platform bindings) against the live source, and keep CLIs/SDKs/packages updated, before relying on them.
 - `brains-trust/` — convene a panel of other frontier models to review a non-trivial change before commit/deploy; fix cross-validated findings.
 - `verify-visually/` — render visual/UI output and actually look at it before calling it done.

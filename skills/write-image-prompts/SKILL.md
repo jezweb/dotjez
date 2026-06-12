@@ -1,0 +1,26 @@
+---
+name: write-image-prompts
+description: "Use when prompting an image-generation model: a hero image, icon set, product shot, illustration, OG image, scene, or any generated visual. Covers concrete specifics over quality adjectives, specifying the world not just the subject, describing presence not absence, reference images over style prose, anchoring sets, iterating by editing, and designing for the image's job. The image sibling of write-prompts."
+---
+
+# Write image prompts: describe what the camera sees, not how good it should be
+
+Image models render nouns, parameters, and relationships. They do not render aspirations. Most weak image prompts fail the same way weak text prompts do — theatre instead of information — but the fixes are image-specific.
+
+**Concrete specifics beat quality adjectives.** "Professional, stunning, high quality, 8k masterpiece" are vibe words; the model already tries its best. What actually steers: photography vocabulary ("85mm f/1.8, shallow depth of field, golden-hour backlight, eye level"), material and texture words, named composition ("rule of thirds, subject left, negative space right"). These are the levers the training data encodes. Same per-line test as `write-prompts`: does this word change the pixels, or just the vibe?
+
+**Specify the world, not just the subject.** Every attribute you don't state regresses to the model's statistical default — and the default world is generic American stock photography. If your audience isn't that default, say so concretely: the architecture, the vegetation, the light, the brands of equipment, which direction the sun comes from. An Australian tradie scene needs the brick veneer, the eucalypts, the Hilux — not the word "Australian", which mostly changes nothing. This is silent failure: the image looks fine and is subtly wrong everywhere.
+
+**Describe presence, not absence.** Negative instructions are weak — "no text", "no people", "don't make it cluttered" often fail. Describe the composition you want so fully that the unwanted thing has nowhere to be: "a clean empty benchtop, single product centred" beats "no clutter". On text-capable models, also keep instructions and content cleanly separated: stray instruction words can get rendered into the image.
+
+**A reference image beats a paragraph of style prose.** One real image anchors palette, lighting, and rendering style better than any description — the worked-example rule in image form. This is also how **sets stay consistent**: generate the first piece with full direction, then pass it as the style reference for the rest. Asking for N variations gives you N takes on one prompt, not N different subjects; and generating a sheet of items to slice up fails on alignment — generate each item isolated, anchored to the shared reference.
+
+**Iterate by editing, not re-rolling.** When a result is close, multi-turn editing from the current image ("same scene, swap the jacket to navy") preserves what's working; regenerating from a tweaked prompt re-rolls everything. Change one thing per turn so you can tell what each change did.
+
+**Ground real subjects in research.** For real places, products, and people's work, look the subject up first and feed concrete observed details into the prompt (or use a search-grounded model where available) — otherwise the model confabulates a plausible-looking landmark that locals will instantly clock as wrong. The `truth-seeking` rule applies to pixels too.
+
+**Design for the image's job, not just its content.** An image has a slot: a hero needs copy space where the headline goes and must survive a crop; an icon needs to read at 24px, single subject, flat; an OG image needs the focal point centre-safe. Specify aspect ratio, where text will overlay, and what it must look like *small*. A beautiful image that fails its slot is a failed image.
+
+**Models differ wildly per job — verify live, then look.** Text rendering, transparency support, faces, speed, and editability vary by model and shift monthly; pick by bake-off on your actual task, not reputation (`verify-current`). And every generated image gets looked at before it ships — text-in-image especially needs a QA read, because a small percentage of renders carry typos that spell-check will never see (`verify-visually`).
+
+The failure this prevents: a folder of generic stock-looking output from a capable model, a "local business" image set that's subtly the wrong country, an icon set where every icon has a different line weight, a hero with no room for the headline, and a typo shipped inside a PNG. Pairs with `write-prompts` (the same theatre test, for text), `reason-over-images` (the model reading images; this is the model making them), and `verify-visually` (nothing visual ships unlooked-at).
