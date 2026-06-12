@@ -1,6 +1,6 @@
 {
   "name": "dotjez",
-  "description": "Cross-cutting skills for working well with an AI agent: planning and stress-testing ideas, prompt-writing, don't-trust-memory verification (facts, tooling, and visuals), stranger-testing docs before they ship, delegation and multi-agent orchestration, role agents and self-refining loops, and the occasional step-back reflection. The thinking, not just the filing. See skills/README.md for the current set.",
+  "description": "Cross-cutting skills for working well with an AI agent: planning and stress-testing ideas, prompt-writing, don't-trust-memory verification (facts, tooling, and visuals), reasoning over images, stranger-testing docs before they ship, delegation and multi-agent orchestration, role agents and self-refining loops, and the occasional step-back reflection. The thinking, not just the filing. See skills/README.md for the current set.",
   "author": {
     "name": "Jeremy Dawes / Jezweb",
     "email": "jeremy@jezweb.net"
