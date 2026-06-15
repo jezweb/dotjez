@@ -49,3 +49,5 @@ That's the whole system: markdown an agent reads and keeps current. No app, no d
 Reusable how-to lives in `skills/` as standard agentskills `SKILL.md` files, not bespoke docs, so any agent that supports skills (Claude Code and others) discovers them and loads the right one by its description. Working in this repo you don't even need that: an agent can read `skills/<name>/SKILL.md` directly when the work calls for it, so they're useful before they're installed anywhere. The set is also packaged as a Claude Code plugin (`.claude-plugin/`); install that for global, auto-by-description use across all your projects, see `skills/README.md`. Workspace-internal procedures (onboarding, getting-started) stay in `.jez/playbooks/`, and records (clients, decisions, knowledge) stay in `.jez/`, those aren't skills.
 
 Keep it private: this workspace will hold real people and client data, so it lives in a private repo or local-only, never a public remote. Don't suggest publishing it.
+
+With any public repo you contribute to: keep client and private information out of anything you add, share the generalisable pattern, not the specifics that identify whose work it came from.

@@ -21,7 +21,6 @@ Or install the whole set as a **plugin** — the easiest route in Claude Code: `
 - **The `description` is the trigger.** Name exactly when to load it, in plain words; that's what the agent matches on.
 - **Goals and failure modes, not step-by-step recipes.** A capable model reads intent better than a script, and scripts rot.
 - **Prune per model release.** Drop anything current models no longer need. The test for any line: would removing it leave the agent unable to act correctly? If not, cut it.
-- **Contributions here are public.** This repo is public, like any public repo you contribute to: keep client and private information out of anything you add — share the generalisable pattern, not the specifics that identify whose work it came from.
 
 ## What's here
 
