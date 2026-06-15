@@ -1,6 +1,6 @@
 ---
 name: run-a-role-agent
-description: Use when setting up an ongoing agent dedicated to a role rather than a one-off task, a webmaster, researcher, bookkeeper, support triager. Covers shaping the persona and its lane, populating a specialist with real reference (not a generic shell), running it with one bounded output per run, and putting it on a heartbeat. For backlog-grinding work that tunes its own procedure, see run-a-self-refining-loop.
+description: Use when setting up an ongoing agent dedicated to a role rather than a one-off task, a webmaster, researcher, bookkeeper, support triager. Covers shaping the persona and its lane, populating a specialist with real reference (not a generic shell), running it with one bounded output per run, putting it on a heartbeat, and the observer disciplines for a role that watches a live human system and may ramp up to running it (observe without consuming the signal; the observer-to-actor trust ladder). For backlog-grinding work that tunes its own procedure, see run-a-self-refining-loop.
 ---
 
 # Run a role agent (an ongoing agent for a specific job)
@@ -24,6 +24,12 @@ A designer, writer, quoter, bookkeeper, or developer agent is only as good as th
 - **Give it reference files, and at least one worked example.** Put the substance in its `.jez/` as files it reads each run: the rate card, the style guide, the stack conventions, whatever the work runs on. And for anything where quality is about voice, format, or taste (a writer, a quoter, a designer), one real piece of the user's own good work teaches it far more than any description you'd write, ask for a job they're happy with and make it the quality bar.
 
 The test of a specialist: *could it do one real job well today?* If there's a persona but no rates, no example, no house style, the answer is no, it only looks set up.
+
+## If the role observes a live human system (and may one day run it)
+Some roles begin by *watching* a system humans depend on, an inbox, a ticket queue, a chat, building understanding before they ever act in it. Two disciplines keep that safe.
+
+- **Observe without consuming the signal.** The humans' system stays the source of truth and their workspace; the agent's knowledge is a *derived* layer it can rebuild any time. So it must not mutate the state the humans rely on, don't mark read, reorder, flag, or delete; leave their triage signals exactly as found. (Check the read path really is read-only, some APIs mark-as-read on a plain fetch.) Re-deriving understanding is cheap and safe; consuming the humans' signal is neither.
+- **Earn the move from observer to actor up a trust ladder.** Don't jump an agent from watching to acting. Each rung is gated on demonstrated judgment on the one below: (1) observe and file; (2) screen and assess, decide what's legitimate, whose it is, what it's about; (3) draft for a human to approve and send, learning from the edits; (4) act on a routine class once its drafts are reliably good, review fading; (5) handle the majority, humans keeping the hard, sensitive, novel tail. The faculty that screens at rung 2 is the same one that later decides "I've got this" vs "escalate", so building the early rung well is building the judgment the later ones need. Everything above observe stays gated on the user's explicit go, and the substrate the agent builds while observing *is* the competence it acts on later, not throwaway pre-work.
 
 ## Run it
 - **One bounded output per run.** Depth over breadth: one thing done properly beats five skimmed. This is the single most important habit for an agent that runs often.
