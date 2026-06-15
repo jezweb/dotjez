@@ -40,7 +40,6 @@ Or install the whole set as a **plugin** — the easiest route in Claude Code: `
 - `stranger-test/` — before shipping docs that agents or newcomers read cold: audit every claim (derived / checkable / judgement), then have a no-context agent actually use the docs and report where it guessed.
 - `reason-over-images/` — extracting, measuring, or judging from images: locate-don't-measure, printed values + code arithmetic, witnessed vs advisory channels, interview-to-discover, validate the distribution.
 - `reflect/` — an occasional step-back (weekly, at a milestone): for the agent and the human both, what's the shape of the run, what patterns, what to change.
-- `clean-contributions/` — before committing or publishing to anything public from real-project work: strip client/project identity, contribute the generalisable pattern not the identifying artifact, and remember public is forever.
 
 (More essentials welcome, see the authoring discipline above.)
 
