@@ -25,3 +25,7 @@ Your own review pass, and the model that wrote the code, share blind spots. A pa
 **When to run it:** after any non-trivial build before commit; a whole-codebase pass before a release; a targeted pass any time the same bug won't fix on the first attempt.
 
 The failure this prevents: shipping the authz hole, the race, or the platform gotcha that a single reviewer (you, or the model that wrote it) confidently missed. The panel's independent eyes are the cheapest place to catch it.
+
+---
+
+**Going further (optional).** This skill is the doctrine, runnable with whatever models you have. If you'd rather a built-out tool that convenes the panel for you — provider wiring, cost-aware routing, the convergence-table synthesis — [`brainstrust`](https://github.com/jezweb/brainstrust) is a public sibling that implements it. The skill stands alone; this is just where to look for the machinery.
