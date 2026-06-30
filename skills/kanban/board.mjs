@@ -86,10 +86,19 @@ function state() {
   return { root: ROOT, git: !!GIT, boards };
 }
 
-// Resolve a (boardRel, col, file) to an absolute path, refusing anything outside ROOT.
+// One path component: alphanumerics + . _ - only, never empty, never . / .. , never dot-prefixed
+// (so `.git`, `.env` etc. are unreachable). board may be nested, so it's validated segment-wise.
+const SAFE_SEG = /^[A-Za-z0-9._-]+$/;
+const safeSeg = (s) => !!s && s !== '.' && s !== '..' && !s.startsWith('.') && SAFE_SEG.test(s);
+
+// Resolve a (boardRel, col, file) to an absolute path, refusing anything outside ROOT,
+// any traversal/hidden segment, and anything that isn't a .md card file.
 function resolveCard(boardRel, col, file) {
-  if (file.includes('/') || file.includes('..') || col.includes('/') || col.includes('..')) throw new Error('bad name');
-  const p = path.resolve(ROOT, boardRel, col, file);
+  const boardSegs = String(boardRel).split('/').filter(Boolean);
+  if (!boardSegs.every(safeSeg)) throw new Error('bad board name');
+  if (!safeSeg(col)) throw new Error('bad column name');
+  if (!safeSeg(file) || !file.endsWith('.md')) throw new Error('bad card name');
+  const p = path.resolve(ROOT, ...boardSegs, col, file);
   if (p !== ROOT && !p.startsWith(ROOT + path.sep)) throw new Error('outside root');
   return p;
 }
@@ -97,7 +106,7 @@ function resolveCard(boardRel, col, file) {
 function move({ board, file, from, to }) {
   const src = resolveCard(board, from, file);
   const dst = resolveCard(board, to, file);
-  if (!existsSync(src)) throw new Error('card not found');
+  if (!listCards(path.dirname(src)).includes(file)) throw new Error('card not found');
   if (existsSync(dst)) throw new Error('a card with that name already exists in the target column');
   if (GIT) {
     try { execFileSync('git', ['-C', GIT, 'mv', src, dst], { stdio: 'pipe' }); return; }
@@ -107,7 +116,10 @@ function move({ board, file, from, to }) {
 }
 
 function cardBody(boardRel, col, file) {
-  return readFileSync(resolveCard(boardRel, col, file), 'utf8');
+  const p = resolveCard(boardRel, col, file);
+  // Only ever serve a file the board actually enumerates as a card (excludes board.md, dotfiles, non-.md).
+  if (!listCards(path.dirname(p)).includes(file)) throw new Error('not a card');
+  return readFileSync(p, 'utf8');
 }
 
 const HTML = `<!doctype html><html lang=en><meta charset=utf-8>
@@ -210,6 +222,10 @@ const server = http.createServer((req, res) => {
       return send(200, 'text/plain; charset=utf-8', body);
     }
     if (url.pathname === '/api/move' && req.method === 'POST') {
+      // Reject cross-origin / DNS-rebinding callers on the mutating endpoint: the Host
+      // must be the loopback the server is bound to, not an attacker's rebinding name.
+      const host = (req.headers.host || '').split(':')[0];
+      if (!['localhost', '127.0.0.1', '[::1]', '::1'].includes(host)) return send(403, 'text/plain', 'forbidden host');
       let raw = '';
       req.on('data', (c) => { raw += c; });
       req.on('end', () => {
@@ -222,7 +238,7 @@ const server = http.createServer((req, res) => {
   } catch (e) { send(500, 'text/plain', e.message || 'error'); }
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, '127.0.0.1', () => {
   console.log(`kanban board → http://localhost:${PORT}`);
   console.log(`root: ${ROOT}${GIT ? '  (git mv enabled)' : '  (plain rename; not in a git repo)'}`);
   const n = state().boards.length;
