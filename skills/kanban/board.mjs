@@ -222,10 +222,16 @@ const server = http.createServer((req, res) => {
       return send(200, 'text/plain; charset=utf-8', body);
     }
     if (url.pathname === '/api/move' && req.method === 'POST') {
-      // Reject cross-origin / DNS-rebinding callers on the mutating endpoint: the Host
-      // must be the loopback the server is bound to, not an attacker's rebinding name.
+      // Guard the only mutating endpoint against CSRF and DNS-rebinding:
+      //  - Host must be the loopback we bound to (rebinding sends an attacker name).
+      //  - Origin, when the browser sends it, must be our own page. A cross-site
+      //    page can forge neither header, and a same-origin fetch always carries
+      //    a matching Origin; non-browser callers (curl) send none, which is fine.
       const host = (req.headers.host || '').split(':')[0];
       if (!['localhost', '127.0.0.1', '[::1]', '::1'].includes(host)) return send(403, 'text/plain', 'forbidden host');
+      const origin = req.headers.origin;
+      const allowed = [`http://localhost:${PORT}`, `http://127.0.0.1:${PORT}`, `http://[::1]:${PORT}`];
+      if (origin && !allowed.includes(origin)) return send(403, 'text/plain', 'forbidden origin');
       let raw = '';
       req.on('data', (c) => { raw += c; });
       req.on('end', () => {
