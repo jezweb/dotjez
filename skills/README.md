@@ -40,6 +40,7 @@ Or install the whole set as a **plugin** — the easiest route in Claude Code: `
 - `stranger-test/` — before shipping docs that agents or newcomers read cold: audit every claim (derived / checkable / judgement), then have a no-context agent actually use the docs and report where it guessed.
 - `reason-over-images/` — extracting, measuring, or judging from images: locate-don't-measure, printed values + code arithmetic, witnessed vs advisory channels, interview-to-discover, validate the distribution.
 - `reflect/` — an occasional step-back (weekly, at a milestone): for the agent and the human both, what's the shape of the run, what patterns, what to change.
+- `kanban/` — a task board that is just folders: a card is a markdown file, the folder it sits in is its status, `git mv` to claim and complete; worktree-safe for a fleet, with an optional zero-dependency local web UI (`board.mjs`) to view and drag cards.
 
 (More essentials welcome, see the authoring discipline above.)
 
