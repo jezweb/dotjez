@@ -12,7 +12,9 @@ A green build, a passing test, and "looks good" are not the same as *you looked 
 - A desktop or app UI you can't script: computer-use to drive and capture it.
 - Generated docs, decks, images: render to a file and open it (the project's own view or export command).
 
-**Instrument what eyes miss.** Looking catches layout; a quick DOM query catches the rest, phantom scrollbars, broken images (`naturalWidth === 0`), non-semantic clickables, missing aria-labels. Run a script for those rather than trusting a glance.
+**Assert on the accessibility tree, not the pixels.** Looking catches layout and colour; for *state*, query the tree (text, roles, a page snapshot) coupled to what the user should get, not DOM selectors — it survives re-renders and beats screenshot-diffing. The same query catches what eyes miss: phantom scrollbars, broken images (`naturalWidth === 0`), non-semantic clickables, missing aria-labels. Run it rather than trusting a glance.
+
+**Check against intent, not aesthetics.** State each claim as PASS/FAIL against what it should *do* — "the out-of-spec value's badge is red", not "looks fine". Checking against the spec rather than whether it's pretty is what catches the domain-correctness bugs a glance sails past: wrong data in a chart, an inverted colour encoding, a palette that overflows its categories.
 
 **Mind the capture traps.** Screenshots on a Retina display come back 2x and oversized; cap them (`sips -Z 1440`) before committing or re-reading them, or they blow the context budget. Don't trigger native dialogs or alerts in a scripted browser, they block the session.
 
